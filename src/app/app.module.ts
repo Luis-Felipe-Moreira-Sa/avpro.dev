@@ -1,19 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContentAreaComponent } from './content-area/content-area.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { NgModule } from '@angular/core';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { TitleBarComponent } from './title-bar/title-bar.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TitleBarComponent,
+    SideBarComponent,
+    ContentAreaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
-    provideClientHydration()
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
